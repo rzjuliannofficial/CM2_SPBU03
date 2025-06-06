@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class MainSPBU03 {
     public static void main(String[] args) {
+        AntrianSLL03 sll = new AntrianSLL03();
         Scanner sc03 = new Scanner(System.in);
         int pilihan;
         do {
@@ -19,7 +20,15 @@ public class MainSPBU03 {
             System.out.println();
             switch (pilihan){
                 case 1 -> {
-                    
+                    System.out.println("=== Tambah Antrian Kendaraan ===");
+                    System.out.print("Masukkan Plat Nomor: ");
+                    String platNomor = sc03.nextLine();
+                    System.out.print("Masukkan Tipe Kendaraan: ");
+                    String tipe = sc03.nextLine();
+                    System.out.print("Masukkan Merk Kendaraan: ");
+                    String merk = sc03.nextLine();
+                    Kendaraan03 kendaraan = new Kendaraan03(platNomor, tipe, merk);
+                    sll.add(kendaraan);
                 }
                 case 2 -> {
                     
@@ -31,7 +40,7 @@ public class MainSPBU03 {
                    
                 }
                 case 5 -> {
-                   
+                    
                 }
                 case 0 -> {
                     
