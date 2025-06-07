@@ -36,4 +36,19 @@ public class AntrianSLL03 {
         }
         System.out.println();
     }
+
+    public void getSize() {
+        System.out.println("Jumlah Antrian: " + size);
+    }
+
+    Kendaraan03 layani() {
+        if (isEmpty()) {
+            return null;
+        } else {
+            Node03 temp = head;
+            head = head.next; 
+            size--;
+            return temp.kendaraan; 
+        }
+    }
 }
