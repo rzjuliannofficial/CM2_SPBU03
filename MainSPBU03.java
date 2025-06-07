@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class MainSPBU03 {
     public static void main(String[] args) {
         AntrianSLL03 sll = new AntrianSLL03();
+        AntrianLayananQueue03 queue = new AntrianLayananQueue03(50);
         Scanner sc03 = new Scanner(System.in);
         int pilihan;
         do {
@@ -38,7 +39,7 @@ public class MainSPBU03 {
                 }
                 case 4 -> {
                    Kendaraan03 dilayani = sll.layani();
-                    if (queue.isEmpty()) {
+                    if (dilayani == null) {
                         System.out.println("Tidak ada kendaraan yang bisa dilayani.");
                         break;
                     } else if (queue.isFull()) {
@@ -53,13 +54,21 @@ public class MainSPBU03 {
                     double hargaPerLiter = sc03.nextDouble();
                     System.out.print("Masukkan Jumlah Liter: ");
                     double liter = sc03.nextDouble();
-                    sc03.nextLine();                 
+                    sc03.nextLine();
+                    queue.enqueue(new TransaksiPengisian03(dilayani, new BBM03(jenisBBM, hargaPerLiter), liter));
+                    System.out.println("Transaksi berhasil ditambahkan ke antrian layanan.");
                 }
                 case 5 -> {
-                    
+                    if (queue.isEmpty()) {
+                        System.out.println("Tidak ada transaksi yang tercatat.");
+                        break;
+                    }
+                    System.out.println("=== Riwayat Transaksi Pengisian BBM ===");
+                    queue.printRiwayatTransaksi();
                 }
                 case 0 -> {
-                    
+                    System.out.println("Terima kasih telah menggunakan layanan kami!");
+                    sc03.close();
                 }
                 default -> {
                     System.out.println("Pilihan tidak valid, silakan coba lagi.");

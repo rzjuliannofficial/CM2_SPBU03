@@ -30,6 +30,7 @@ public class AntrianSLL03 {
         Node03 current = head;
         System.out.println("Daftar Antrian Kendaraan:");
         System.out.printf("%-15s %-15s %-15s\n", "Plat Nomor", "Tipe", "Merk");
+        System.out.println("--------------------------------------");
         while (current != null) {
             current.kendaraan.tampilkanInformasi();
             current = current.next;
