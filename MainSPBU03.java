@@ -31,13 +31,22 @@ public class MainSPBU03 {
                     sll.add(kendaraan);
                 }
                 case 2 -> {
-                    
+                    sll.print();
                 }
                 case 3 -> {
-                    
+                    sll.getSize();
                 }
                 case 4 -> {
-                   
+                   Kendaraan03 dilayani = sll.layani();
+                    System.out.println("=== Layani Kendaraan ===");
+                    System.out.println("Petugas Melayani "+ dilayani.platNomor);
+                    System.out.print("Masukkan Jenis BBM: ");
+                    String jenisBBM = sc03.nextLine();
+                    System.out.print("Masukkan Harga per Liter: ");
+                    double hargaPerLiter = sc03.nextDouble();
+                    System.out.print("Masukkan Jumlah Liter: ");
+                    double liter = sc03.nextDouble();
+                    sc03.nextLine();                 
                 }
                 case 5 -> {
                     
