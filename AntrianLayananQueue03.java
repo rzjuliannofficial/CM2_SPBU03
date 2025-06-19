@@ -45,7 +45,7 @@ public class AntrianLayananQueue03 {
     }
 
     public void sorting(){
-    for (int i = 0; i < size; i++) { //size digunakan untuk membatasi jumlah elemen yang valid dalam array
+    for (int i = 0; i < size; i++) {
             TransaksiPengisian03 temp;
             for (int j = 1; j < size - i; j++) {
                 if (data[j].liter < data[j - 1].liter) { //ascending
@@ -58,7 +58,7 @@ public class AntrianLayananQueue03 {
     }
 
     public void sortingTotal(){
-        for (int i = 0; i < size; i++) { //data.length-1 karena dalam bobblesort, setiap iterasi memastikan 1 element sdh berd diposisi akhir
+        for (int i = 0; i < size; i++) {
                 TransaksiPengisian03 temp;
                 for (int j = 1; j < size-i; j++) {
                     if (data[j].totalBayar > data[j-1].totalBayar) { //desc
