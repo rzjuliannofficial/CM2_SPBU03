@@ -11,7 +11,7 @@ public class AntrianSLL03 {
     }
     
     public void add(Kendaraan03 input){
-        Node03 newNode = new Node03(input, null);
+        Node03 newNode = new Node03(input, null); //membuat objek newNode dengan menggunakan class node03 dengan paramater input, dan null
         if (isEmpty()) {
             head = tail = newNode;
         } else {
@@ -29,7 +29,7 @@ public class AntrianSLL03 {
 
         Node03 current = head;
         System.out.println("Daftar Antrian Kendaraan:");
-        System.out.printf("%-15s %-15s %-15s\n", "Plat Nomor", "Tipe", "Merk");
+        System.out.printf("%-15s %-15s %-15s %-15s\n", "Plat Nomor", "Tipe", "Merk" , "warna");
         System.out.println("--------------------------------------");
         while (current != null) {
             current.kendaraan.tampilkanInformasi();

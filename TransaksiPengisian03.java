@@ -10,7 +10,7 @@ public class TransaksiPengisian03 {
         this.liter = liter;
         this.totalBayar = bbm.hargaPerliter * liter;
     }
-
+    
     public void TampilkanTranskasi(){
         System.out.printf("%-15s Rp. %.2f\n", kendaraan.platNomor, totalBayar);
     }

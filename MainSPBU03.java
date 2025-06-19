@@ -13,6 +13,8 @@ public class MainSPBU03 {
             System.out.println("3. Check Jumlah Antrian");
             System.out.println("4. Layani Kendaraan");
             System.out.println("5. Tampilkan Riwayat Transaksi");
+            System.out.println("6. Urutkan Transaksi Berdasarkan Jumlah Liter");
+            System.out.println("7. Urutkan Transaksi Berdasarkan Total Bayar");
             System.out.println("0. Keluar");
             System.out.println("======================================");
             System.out.print("Masukkan Pilihan Anda: ");
@@ -28,7 +30,9 @@ public class MainSPBU03 {
                     String tipe = sc03.nextLine();
                     System.out.print("Masukkan Merk Kendaraan: ");
                     String merk = sc03.nextLine();
-                    Kendaraan03 kendaraan = new Kendaraan03(platNomor, tipe, merk);
+                    System.out.print("Masukkan Warna: ");
+                    String warna = sc03.nextLine();
+                    Kendaraan03 kendaraan = new Kendaraan03(platNomor, tipe, merk, warna);
                     sll.add(kendaraan);
                 }
                 case 2 -> {
@@ -66,6 +70,23 @@ public class MainSPBU03 {
                     System.out.println("=== Riwayat Transaksi Pengisian BBM ===");
                     queue.printRiwayatTransaksi();
                 }
+                case 6 -> {
+                    if (queue.isEmpty()) {
+                        System.out.println("Tidak ada transaksi yang tercatat untuk diurutkan.");
+                        break;
+                    }
+                        queue.sorting();
+                        queue.printRiwayatTransaksi(); // Menampilkan transaksi setelah diurutkan
+                    }
+                case 7 -> {
+                    if (queue.isEmpty()) {
+                        System.out.println("Tidak ada transaksi yang tercatat untuk diurutkan.");
+                        break;
+                    }
+                        queue.sortingTotal();
+                        queue.printRiwayatTransaksi(); // Menampilkan transaksi setelah diurutkan
+                    }
+
                 case 0 -> {
                     System.out.println("Terima kasih telah menggunakan layanan kami!");
                     sc03.close();
